@@ -1,1 +1,73 @@
+* {
+    /* reset all margins to 0 */
+    margin: 0;
+    /* count padding in element widths */
+    box-sizing: border-box;
+}
 
+body {
+    background-color: bisque;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* rem is the browser set default font size) */
+    font-size: 3rem;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+header {
+    background-color: tan;
+    padding: 30px;
+    text-align:center;
+}
+
+footer {
+    background-color: tan;
+    padding: 20px;
+    text-align: center;
+}
+
+img {
+    /* make images 100% width of parent columns */
+    width: 100%;
+}
+
+#row {
+    /* use flexbox on parent div to manage row or column layout */
+    display: flex;
+    /* use row for desktop and tablet, column for mobile */
+    flex-direction: row;
+    /* wrap is used to create new row lines */
+    flex-wrap: wrap;
+}
+
+.column {
+    /* flex 1 sets flex-grow to 1, flex-shrink to 1, and flex-basis to 1, meaning all child columns will have the same width */
+    flex: 1;
+    padding: 10px;
+}
+
+/* breakpoints for tablet */
+@media screen and (max-width: 900px) {
+    .column {
+        /* only 2 columns at this size */
+        min-width: 50%;
+    }
+}
+
+/* breakpoint for mobile */
+@media screen and (max-width: 500px) {
+    .column {
+        /* makes images fill screen at this size, appearing as single column */
+        min-width: 100%;
+    }
+    /* alternative approach */
+    #row {
+        flex-direction: column;
+    }
+}
